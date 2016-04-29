@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+
+	<package name="default" extends="struts-default" namespace="/">
+
+		<action name="login" class="com.scu.actions.LoginAction">
+			<result name="success" type="redirectAction">search</result>
+			<result name="error">Login.jsp</result>
+		</action>
+		
+		<action name="guestlogin"  method="guestlogin" class="com.scu.actions.LoginAction">
+			<result name="success" type="redirectAction">search</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+
+		<action name="logout" class="com.scu.actions.LogoutAction">
+			<result name="success">Login.jsp</result>
+		</action>
+
+		<action name="registration" method="registration"
+			class="com.scu.actions.UserDetailAction">
+			<result name="success">UserDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+	<action name="addUserByAdmin" method="addUserByAdmin"
+			class="com.scu.actions.UserDetailAction">
+			<result name="success">UserDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="saveUser" method="saveUser"
+			class="com.scu.actions.UserDetailAction">
+			<result name="success">Login.jsp</result>
+			<result name="error">UserDetail.jsp</result>
+		</action>
+
+		<action name="searchProduct" method="searchProduct"
+			class="com.scu.actions.SearchAction">
+			<result name="success">SearchResult.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="deleteProduct" method="deleteProduct"
+			class="com.scu.actions.SearchAction">
+			<result name="success">SearchResult.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="addProductToCart" method="addProductToCart"
+			class="com.scu.actions.SearchAction">
+			<result name="success">SearchResult.jsp</result>
+			<result name="error">SearchResult.jsp</result>
+		</action>
+
+		<action name="search" class="com.scu.actions.SearchAction">
+			<result name="success">SearchResult.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="productDetail" class="com.scu.actions.ProductDetailAction">
+			<result name="success">ProductDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<!-- action for update -->
+		<action name="updateProduct" method="updateProduct"
+			class="com.scu.actions.ProductDetailAction">
+			<result name="success">/ProductDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<!-- action for add Product -->
+		<action name="addProduct" method="addProduct"
+			class="com.scu.actions.ProductDetailAction">
+			<result name="success">/ProductDetail.jsp</result>
+		</action>
+
+		<!-- action for Edit Product -->
+		<action name="editProduct" method="editProduct"
+			class="com.scu.actions.ProductDetailAction">
+			<result name="success">/ProductDetail.jsp</result>
+		</action>
+
+		<action name="giveFeedback" method="giveFeedback"
+			class="com.scu.actions.ProductDetailAction">
+			<result name="success">/ProductDetail.jsp</result>
+		</action>
+
+		<!-- action for Cart show -->
+
+		<action name="showCart" method="showCart" class="com.scu.actions.CartAction">
+			<result name="success">Cart.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="showReport" method="showReport"
+			class="com.scu.actions.ReportAction">
+			<result name="success">Report.jsp</result>
+			<result name="error">SearchResult.jsp</result>
+		</action>
+		<!-- action for Inventory show -->
+
+
+		<action name="showInventory" method="showInventory"
+			class="com.scu.actions.InventoryAction">
+			<result name="success">Inventory.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="editInventory" method="editInventory"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagement.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="insertInvPro" method="insertInvPro"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagementDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="updateInvPro" method="updateInvPro"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagementDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="updateInventory" method="updateInventory"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagement.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="deleteProductFromInv" method="deleteProductFromInv"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagement.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+		<action name="editQuantity" method="editQuantity"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagementDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="addNewProductQuant" method="addNewProductQuant"
+			class="com.scu.actions.InventoryProductManagementAction">
+			<result name="success">InventoryProductManagementDetail.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+
+		<!-- action for Remove iteam from Cart -->
+
+		<action name="removeFromCart" method="removeFromCart"
+			class="com.scu.actions.CartAction">
+			<result name="success">Cart.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<!-- action for Cart checkout -->
+
+		<action name="checkout" method="checkout" class="com.scu.actions.CartAction">
+			<result name="success">Payment.jsp</result>
+			<result name="error">Cart.jsp</result>
+		</action>
+
+		<!-- Action for payment -->
+
+		<action name="payAmount" method="payAmount" class="com.scu.actions.PaymentAction">
+			<result name="success">SearchResult.jsp</result>
+			<result name="error">Cart.jsp</result>
+		</action>
+
+		<!-- Action for cancel payment -->
+		<action name="cancelTransection" method="cancelTransection"
+			class="com.scu.actions.PaymentAction">
+			<result name="success">SearchResult.jsp</result>
+			<result name="error">Cart.jsp</result>
+		</action>
+
+		<!-- Action for show order -->
+		<action name="showOrder" method="showOrder"
+			class="com.scu.actions.OrderDetailAction">
+			<result name="success">OrderDetail.jsp</result>
+			<result name="error">SearchResult.jsp</result>
+		</action>
+
+		<!-- Action for show order product mapping -->
+		<action name="showOrderDetails" method="showOrderDetails"
+			class="com.scu.actions.OrderDetailAction">
+			<result name="success">OrderProductDetail.jsp</result>
+			<result name="error">SearchResult.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
